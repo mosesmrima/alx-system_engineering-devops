@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#display all attached IPs
+ifconfig | grep -Po 'inet \d{0,9}+.\d{0,9}+.\d{0,9}+.\d{0,9}+' | cut -d' '  -f2

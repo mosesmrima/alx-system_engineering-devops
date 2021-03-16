@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #nested while loop to display hours and minutes
 hour=0
-minutes=0
+minutes=1
 while [ $hour -le 12 ]
 do
-    minutes=0
+    minutes=1
     echo "Hour: $hour"
     while [ $minutes -le 59 ]
     do

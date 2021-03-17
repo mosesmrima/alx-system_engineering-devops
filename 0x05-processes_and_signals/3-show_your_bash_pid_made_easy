@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#using pgrep to list bash PID and name
+pgrep -l bash

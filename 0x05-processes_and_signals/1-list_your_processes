@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#prints all processes,, including those not asscociated to tty
+ #in a user-oriented format with process hierachy
+ps -axuf

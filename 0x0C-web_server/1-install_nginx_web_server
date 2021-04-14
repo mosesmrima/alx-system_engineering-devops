@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#Script install and start Nginx
+
+#Update and install nginx
+apt-get update
+apt-get -y install nginx
+
+#Create dummy HTML files to be rendered
+mkdir -p /etc/nginx/html
+touch /etc/nginx/html/index.html
+echo "Holberton School" > /etc/nginx/html/index.html
+
+#Configure the nginx server
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     root        /etc/nginx/html;
+     index       index.html index.htm;
+}
+" > /etc/nginx/sites-available/default
+
+service nginx restart

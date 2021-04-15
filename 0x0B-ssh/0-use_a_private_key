@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #connect to a server and authenticate using a ssh key
-ssh -i ~/.ssh/sshkey ubuntu@104.196.32.44
+ssh -i ~/.ssh/holberton ubuntu@104.196.32.44

@@ -6,21 +6,5 @@ apt-get update
 apt-get -y install nginx
 
 #Create dummy HTML files to be rendered
-mkdir -p /var/www/test_1/html
-touch /var/www/test_1/html/index.html
-echo "Holberton School" > /var/www/test_1/html/index.html
-
-#Configure the nginx server
-printf %s "server {
-     listen      80 default_server;
-     listen      [::]:80 default_server;
-     root        /var/www/test_1/html;
-     index       index.html index.htm;
-}
-" > /etc/nginx/sites-available/default
-
-
-#Enable and restart nginx
-sudo ufw allow 'Nginx HTTP'
-ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
 service nginx restart

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script installs and configures nginx then redirects /redirect_me
 apt-get update
-apt-get install nginx
+apt-get -y install nginx
 mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
 echo "Holberton School" > /etc/nginx/html/index.html

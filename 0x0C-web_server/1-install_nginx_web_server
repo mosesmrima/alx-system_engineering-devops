@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 #Script install and start Nginx
 
-#Update and install nginx
-apt-get update
+apt-get -y update
 apt-get -y install nginx
-
-#Create dummy HTML files to be rendered
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
+ufw allow 'Nginx HTTP'
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
 service nginx restart

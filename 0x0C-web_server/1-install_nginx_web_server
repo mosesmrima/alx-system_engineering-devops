@@ -6,17 +6,20 @@ apt-get update
 apt-get -y install nginx
 
 #Create dummy HTML files to be rendered
-mkdir -p /etc/nginx/html
-touch /etc/nginx/html/index.html
-echo "Holberton School" > /etc/nginx/html/index.html
+mkdir -p /var/www/test_1/html
+touch /var/www/test_1/html/index.html
+echo "Holberton School" > /var/www/test_1/html/index.html
 
 #Configure the nginx server
 printf %s "server {
      listen      80 default_server;
      listen      [::]:80 default_server;
-     root        /etc/nginx/html;
+     root        /var/www/test_1/html;
      index       index.html index.htm;
 }
 " > /etc/nginx/sites-available/default
 
+
+#Enable and restart nginx
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 service nginx restart

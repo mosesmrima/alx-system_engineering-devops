@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# This script installs nginx and
+#  configures it to return custom headers
+
+
+apt-get update
+apt-get install nginx
+
+
+mkdir -p /var/www/html
+touch /var/www/html/index.html
+echo "Holberton School" > /var/www/html/index.html
+
+
+touch /var/www/html/404.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     root        /var/www/html;
+     index       index.html index.htm;
+     add_header	 X-Served-By $HOSTNAME;
+
+     location	 /redirect_me {
+     	 return  301 https://vx-underground.org/;
+     }
+
+     error_page	404 /404.html;
+     location	/404 {
+     	 root	/var/www/html;
+	 internal;
+     }
+}
+" > /etc/nginx/sites-available/default
+
+service nginx restart

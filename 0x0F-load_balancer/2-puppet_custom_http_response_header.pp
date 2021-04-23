@@ -1,3 +1,4 @@
+#Install and config nginx
 exec { 'apt update':
      command  => 'apt-get update',
      path     => /usr/local/bin/:/bin/',

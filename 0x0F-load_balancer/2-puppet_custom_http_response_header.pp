@@ -1,17 +1,10 @@
-#Install and config nginx
-exec { 'apt update':
-     command  => 'apt-get update',
-     path     => /usr/local/bin/:/bin/',
-     }
-
-package { 'nginx':
-	ensure => 'installed',
-	require => Exec['update'],
-	}
-
+# Puppet manifest to install nginx
 
 $str = "add_header X-Served-By ${hostname};"
 
+exec { 'update':
+  command => '/usr/bin/apt-get update',
+}
 -> package { 'nginx':
   ensure  => installed,
   require => Exec['update']

@@ -22,7 +22,8 @@ if __name__ == "__main__":
                 tasks += 1
             else:
                 tasks += 1
-    url = 'https://jsonplaceholder.typicode.com/users?id={}'.format(sys.argv[1])
+    url = 'https://jsonplaceholder.typicode.com/users?id={}'\
+        .format(sys.argv[1])
     with urllib.request.urlopen(url) as user_details:
         user_data = user_details.read()
         user_dict = json.loads(user_data)

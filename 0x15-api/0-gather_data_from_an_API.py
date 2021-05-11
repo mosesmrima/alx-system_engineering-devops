@@ -34,4 +34,4 @@ if __name__ == "__main__":
     print(output)
     for task in dict_obj:
         if task['completed']:
-            print("\t{}".format(task['title']))
+            print("\t {}".format(task['title']))

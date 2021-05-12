@@ -3,8 +3,8 @@
 This script writes data from an API to a csv file
 """
 import csv
-import sys
 import requests
+import sys
 if __name__ == "__main__":
     todo = requests.get('https://jsonplaceholder.typicode.com/todos/',
                         params={'userId': sys.argv[1]}).json()

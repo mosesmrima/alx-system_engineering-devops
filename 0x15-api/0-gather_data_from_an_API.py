@@ -4,8 +4,8 @@ This script gathers data from an API using urllib
 It then serializes the json data to a python dictionary and prints it out
 It takes an parameter, the user Id of the user's data that you want
 """
-import sys
 import requests
+import sys
 if __name__ == "__main__":
     todo = requests.get('https://jsonplaceholder.typicode.com/todos/',
                         params={'userId': sys.argv[1]}).json()

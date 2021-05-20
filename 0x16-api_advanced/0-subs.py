@@ -7,5 +7,7 @@ headers = {"User-Agent": "aUserAgent"}
 url = "https://www.reddit.com/subreddits/search.json?q={}"\
     .format(argv[1])
 subreddit = requests.get(url, headers=headers).json()
-
-print(subreddit['data']['children'][0]['data']['subscribers'])
+try:
+    print(subreddit['data']['children'][0]['data']['subscribers'])
+except IndexError:
+    print(0)

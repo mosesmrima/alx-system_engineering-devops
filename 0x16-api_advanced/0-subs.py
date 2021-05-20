@@ -8,7 +8,7 @@ def number_of_subscribers(subreddit):
     headers = {"User-Agent": "aUserAgent"}
     url = "https://www.reddit.com/subreddits/search.json?q={}"\
         .format(subreddit)
-    response = requests.get(url, headers=headers).json()
+    response = requests.get(url, headers=headers, allow_redirects=False).json()
     try:
         return response['data']['children'][0]['data']['subscribers']
     except IndexError:

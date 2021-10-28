@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-#prints contents of urrent dir where as a list with for loop
-list=$(ls)
-for i in $list
-do
-    echo "$i" | cut -d '-' -f2
-done

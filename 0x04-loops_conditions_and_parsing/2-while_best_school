@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #Print "Best School" x10 using a while loop
 
 i=0

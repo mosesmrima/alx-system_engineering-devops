@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#print listening sockets with program names
+
+netstat -lp
